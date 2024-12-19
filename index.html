@@ -3,29 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Téléchargement PDF</title>
+    <title>Accès Restreint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2b2b2b, #444);
+            text-align: center;
+            padding: 5%;
+            color: #eee;
+        }
+        h1 {
+            font-size: 3em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 2em;
+            max-width: 400px;
+            margin: 2em auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        label {
+            font-size: 1.2em;
+        }
+        input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin: 1em 0;
+            font-size: 1em;
+            border: 2px solid #555;
+            border-radius: 5px;
+            background: #222;
+            color: #fff;
+        }
+        button {
+            background: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #777;
+        }
+        #message {
+            color: red;
+            font-size: 1em;
+            margin-top: 1em;
+        }
+    </style>
 </head>
 <body>
-    <h2>Entrez le mot de passe pour télécharger le fichier PDF</h2>
+
+<h1>🔒 Accès Restreint</h1>
+<div class="form-container">
     <form id="passwordForm">
-        <label for="password">Mot de passe :</label>
-        <input type="password" id="password" required>
+        <label for="password">Entrez le code secret :</label><br>
+        <input type="password" id="password" required><br>
         <button type="submit">Valider</button>
     </form>
-    <p id="message" style="color:red;"></p>
+    <p id="message"></p>
+</div>
 
-    <script>
-        document.getElementById("passwordForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const password = document.getElementById("password").value;
-            
-            // Remplacez 'votre_mot_de_passe' par votre mot de passe réel
-            if (password === "42") {
-                window.location.href = "https://drive.google.com/file/d/1vVJDq5FD5imvY4Yz8RkN7_-tk9wv-htn/uc?export=download"; 
-            } else {
-                document.getElementById("message").textContent = "Mot de passe incorrect !";
-            }
-        });
-    </script>
+<script>
+    document.getElementById("passwordForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const password = document.getElementById("password").value;
+
+        // Remplacez 'votre_mot_de_passe' par le vrai mot de passe
+        if (password === "42") {
+            window.location.href = "https://drive.google.com/file/d/1vVJDq5FD5imvY4Yz8RkN7_-tk9wv-htn/uc?export=download/Le_Message.pdf";
+        } else {
+            document.getElementById("message").textContent = "Accès refusé !";
+        }
+    });
+</script>
+
 </body>
 </html>
+
