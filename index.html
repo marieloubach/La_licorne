@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téléchargement PDF</title>
+</head>
+<body>
+    <h2>Entrez le mot de passe pour télécharger le fichier PDF</h2>
+    <form id="passwordForm">
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" required>
+        <button type="submit">Valider</button>
+    </form>
+    <p id="message" style="color:red;"></p>
+
+    <script>
+        document.getElementById("passwordForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const password = document.getElementById("password").value;
+            
+            // Remplacez 'votre_mot_de_passe' par votre mot de passe réel
+            if (password === "42") {
+                window.location.href = "https://drive.google.com/file/d/1vVJDq5FD5imvY4Yz8RkN7_-tk9wv-htn/uc?export=download"; 
+            } else {
+                document.getElementById("message").textContent = "Mot de passe incorrect !";
+            }
+        });
+    </script>
+</body>
+</html>
