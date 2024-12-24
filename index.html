@@ -63,7 +63,7 @@
 <h1>🔒 Accès Restreint</h1>
 <div class="form-container">
     <form id="passwordForm">
-        <label for="password">Entrez le code secret :</label><br>
+        <label for="password"> Put the secret code :</label><br>
         <input type="password" id="password" required><br>
         <button type="submit">Valider</button>
     </form>
@@ -76,8 +76,8 @@
         const password = document.getElementById("password").value;
 
         // Remplacez 'votre_mot_de_passe' par le vrai mot de passe
-        if (password === "42") {
-            window.location.href = "https://drive.google.com/file/d/1vVJDq5FD5imvY4Yz8RkN7_-tk9wv-htn/uc?export=download/Le_Message.pdf";
+        if (password === "Sicilia") {
+            window.location.href = "https://drive.google.com/file/d/1vVJDq5FD5imvY4Yz8RkN7_-tk9wv-htn/uc?export=download/Buon_natale.pdf";
         } else {
             document.getElementById("message").textContent = "Accès refusé !";
         }
